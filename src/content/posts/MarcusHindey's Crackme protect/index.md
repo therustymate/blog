@@ -7,6 +7,9 @@ category: crackmes
 draft: false
 lang: en
 ---
+
+::github{repo="therustymate/crackmes"}
+
 # MarcusHindey's Crackme protect
 
 Since `ILSpy` failed to decompile the code, I will proceed with dynamic analysis using `dnSpy`.
