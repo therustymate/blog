@@ -1,10 +1,9 @@
 ---
 title: MarcusHindey's Crackme protect
 published: 2025-06-16
-description: Welcome blog post
-image: ./cover.jpg
+description: crackmes
 tags: [analytics, csharp, dotnet]
-category: Welcome
+category: crackmes
 draft: false
 lang: en
 ---
