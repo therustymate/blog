@@ -1,8 +1,8 @@
 ---
 title: MAL-250608-01-01
 published: 2025-06-08
-description: Malware Analysis
-tags: [analytics, c]
+description: SKT (South Korea, ISP) - BPFDoor Analysis
+tags: [analysis, c]
 category: Malware Analysis
 draft: false
 lang: en

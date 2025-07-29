@@ -1,8 +1,8 @@
 ---
 title: MarcusHindey's Crackme protect
 published: 2025-06-16
-description: crackmes
-tags: [analytics, csharp, dotnet]
+description: Crackmes Analysis
+tags: [Analysis, csharp, dotnet]
 category: crackmes
 draft: false
 lang: en
