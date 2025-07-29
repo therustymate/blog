@@ -11,7 +11,7 @@ lang: en
 
 Since `ILSpy` failed to decompile the code, I will proceed with dynamic analysis using `dnSpy`.
 
-<img src="./decompile_failed.png">
+![decompile_failed](./decompile_failed.png)
 
 ## Entry Point
 Since `ILSpy` failed to fully decompile the application, a clear entry point could not be identified. Therefore, I will perform dynamic analysis using a **Windows 10 virtual machine and `dnSpy`**.
@@ -21,7 +21,7 @@ However, I was able to <u>identify a working portion of the code</u> that includ
 ```cs
 namespace crackme
 {
-    public class CrackMarcuza_002DProtect_002D9DD71ADEL2 : Form
+    public class CrackMarcu za_002DProtect_002D9DD71ADEL2 : Form
     {
         ...
     }
@@ -83,11 +83,11 @@ public static string CrackMarcuza-Protect-4G3C3EA4G0(string A_0, int A_1)
 }
 ```
 
-<img src="./breakpoint.png">
+![breakpoint](./breakpoint.png)
 
 By inspecting the actual value returned by the `CrackMarcuza-Protect-4G3C3EA4G0` function, which returns a `StringBuilder` object, the result is as follows:
 
-<img src="./debug_result.png">
+![debug_result](./debug_result.png)
 
 It can be confirmed that the `stringBuilder` object contains the value `{m4rcuzCrack}`.
 
