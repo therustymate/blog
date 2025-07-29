@@ -106,7 +106,10 @@ In the recent SKT cyberattack, threat actors gained initial access via a <u>web 
 |                       | SHA256      | 7c39f3c3120e35b8ab89181f191f01e2556ca558475a2803cb1f02c05c830423  |
 
 ### References
-**!!!WARNING!!!** Some references may not be fully reliable.
+:::caution
+Some references may not be fully reliable.
+:::
+
 | Title                 | Link                                  |
 |:----------------------|:--------------------------------------|
 | KISA (boho.or.kr)     | [here](https://boho.or.kr/kr/bbs/view.do?bbsId=B0000133&menuNo=205020&nttId=71735) |
