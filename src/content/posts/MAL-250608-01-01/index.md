@@ -251,7 +251,7 @@ switch(cmp) {
 
 When spawning a bind shell, the malware selects a random port within the range **42391** to **43390**.
 
-```C
+```c
 for (port = 42391; port < 43391; port++) { // 42391 - 43390
     my_addr.sin_port = htons(port);
     if( bind(sock_fd,(struct sockaddr *)&my_addr,sizeof(struct sockaddr)) == -1 ){
