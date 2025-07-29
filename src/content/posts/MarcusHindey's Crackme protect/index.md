@@ -11,7 +11,7 @@ lang: en
 
 Since `ILSpy` failed to decompile the code, I will proceed with dynamic analysis using `dnSpy`.
 
-<img src="decompile_failed.png">
+<img src="./decompile_failed.png">
 
 ## Entry Point
 Since `ILSpy` failed to fully decompile the application, a clear entry point could not be identified. Therefore, I will perform dynamic analysis using a **Windows 10 virtual machine and `dnSpy`**.
@@ -32,7 +32,7 @@ namespace crackme
 As a result of attempting decompilation and debugging using `dnSpy` on a Windows 10 virtual machine in `VirtualBox`, I discovered a new variable named `flag` (`bool`) that was not visible in `ILSpy`.
 
 `CrackMarcuza-Protect-9DD71ADEL2.cs`
-```cs
+```CSharp
 private void Cra...(object CrackMarc..., EventArgs CrackMa...)
 {
     ...
@@ -43,7 +43,7 @@ private void Cra...(object CrackMarc..., EventArgs CrackMa...)
 
 This variable stores the result of comparing the string entered by the user in `CrackMarcuza-Protect-2E9E89G659` (`TextBox`) with a value processed using the `CrackMarcuza-Protect-224C999FHE` method from the `CrackMarcuza-Protect-9DD71ADEL2` class.
 
-```cs
+```CSharp
 bool flag = CrackMarcuza-Protect-9DD71ADEL2.CrackMarcuza-Protect-224C999FHE(
     this.CrackMarcuza-Protect-2E9E89G659.Text,
     CrackMarcuza-Protect-0L69ACE66B.CrackMarcuza-Protect-4G3C3EA4G0(
@@ -54,7 +54,7 @@ bool flag = CrackMarcuza-Protect-9DD71ADEL2.CrackMarcuza-Protect-224C999FHE(
 ```
 
 First, when decompiling the `CrackMarcuza-Protect-224C999FHE` function, the following code is obtained:
-```cs
+```CSharp
 public static bool CrackMarcuza-Protect-224C999FHE(string A_0, string A_1)
 {
     return A_0 == A_1;
@@ -67,7 +67,7 @@ This means that when the actual variables are compared in memory, **the encrypte
 
 Therefore, I will set a **breakpoint** in the function `CrackMarcuza-Protect-4G3C3EA4G0`, which processes the second argument (`A_1`), in an attempt to capture the actual flag at runtime.
 
-```cs
+```CSharp
 public static string CrackMarcuza-Protect-4G3C3EA4G0(string A_0, int A_1)
 {
     if (Assembly.GetExecutingAssembly().FullName == Assembly.GetCallingAssembly().FullName)
@@ -83,11 +83,11 @@ public static string CrackMarcuza-Protect-4G3C3EA4G0(string A_0, int A_1)
 }
 ```
 
-<img src="breakpoint.png">
+<img src="./breakpoint.png">
 
 By inspecting the actual value returned by the `CrackMarcuza-Protect-4G3C3EA4G0` function, which returns a `StringBuilder` object, the result is as follows:
 
-<img src="debug_result.png">
+<img src="./debug_result.png">
 
 It can be confirmed that the `stringBuilder` object contains the value `{m4rcuzCrack}`.
 
