@@ -1,9 +1,9 @@
 ---
 title: MarcusHindey's Crackme protect
-published: 2025-06-16
-description: Crackmes Analysis
-tags: [Analysis, csharp, dotnet]
-category: crackmes
+published: 2025-06-15
+description: MarcusHindey's Crackme protect
+tags: [analysis, csharp, dotnet, debug]
+category: Crackmes
 draft: false
 lang: en
 ---
