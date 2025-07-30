@@ -1,6 +1,6 @@
 ---
 title: LINK Project Hacking
-published: 2025-06-15
+published: 2025-07-31
 description: Hacking My Own Project - LINK
 tags: [penetration testing, MITM, RSA]
 category: HackMyOwn
