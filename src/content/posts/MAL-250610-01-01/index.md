@@ -29,7 +29,7 @@ lang: en
 | CVE                | N/A                         |
 | Tags               | Backdoor                    |
 
-### Incident Metadata
+## Incident Metadata
 | Metadata                      | Information                                               |
 |:------------------------------|:----------------------------------------------------------|
 | Command & Control (C2) Server | 185.244.29[.]181:1604                                     |
@@ -39,12 +39,12 @@ lang: en
 | Payload Description           | Backdoor                                                  |
 | Network Behavior              | C2 Connection & Communcation                              |
 
-### File Names
+## File Names
 | File Name                                 | Size          |
 |:------------------------------------------|:--------------|
 | edf5ee6173907a5c75650016186ea5a8.exe      | 514'048 bytes |
 
-### Hashes
+## Hashes
 | File Name                             | Hash Type   | Hash                                                              |
 |:--------------------------------------|:------------|:------------------------------------------------------------------|
 | edf5ee6173907a5c75650016186ea5a8.exe  | MD5         | edf5ee6173907a5c75650016186ea5a8 |
@@ -52,13 +52,13 @@ lang: en
 |                                       | SHA256      | cd425ba34aa2ac7f31b6c498b09780cd7bacb7d7826cdc119fd6a35e95ee8700  |
 |                                       |             |                           |
 
-### References
+## References
 **!!!WARNING!!!** Some references may not be fully reliable.
 | Title                 | Link                                  |
 |:----------------------|:--------------------------------------|
 | MalwareBazaar         | [here](https://bazaar.abuse.ch/sample/cd425ba34aa2ac7f31b6c498b09780cd7bacb7d7826cdc119fd6a35e95ee8700/) |
 
-## Blackbox Analysis
+# Blackbox Analysis
 Anyrun URL: [https://app.any.run/tasks/7fcb71c2-1a6c-4bfd-99e1-9aaaaa2490bd](https://app.any.run/tasks/7fcb71c2-1a6c-4bfd-99e1-9aaaaa2490bd)
 
 ```x86asm
@@ -69,7 +69,7 @@ Anyrun URL: [https://app.any.run/tasks/7fcb71c2-1a6c-4bfd-99e1-9aaaaa2490bd](htt
 I confirmed the presence of a tailcall to `_CorExeMain()` at the program’s entry point using `Binary Ninja`.
 Therefore, I will use `ILSpy` to decompile the binary.
 
-### `csproj` File Contents
+## `csproj` File Contents
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
@@ -118,7 +118,7 @@ Therefore, I will use `ILSpy` to decompile the binary.
 | **Embedded Resource**             | `ILRepack.List`                                                                             |
 | **Referenced Libraries**          | `System.Core`, `System.Xml`, `System.Web`, `System.Management`, `System.ServiceModel`, etc. |
 
-### `AssemblyInfo.cs` File Contents
+## `AssemblyInfo.cs` File Contents
 
 ```cs
 using System.Diagnostics;
@@ -155,7 +155,7 @@ using System.Security.Permissions;
 
 **MaxXor** is the original author of Quasar RAT.
 
-### `ThisAssembly.cs` File Contents
+## `ThisAssembly.cs` File Contents
 
 ```cs
 internal sealed class ThisAssembly
@@ -196,7 +196,7 @@ internal sealed class ThisAssembly
 | **Public Key Token**      | `257b51d87d2e4d67`                                                                             |
 | **Root Namespace**        | `ProtoBuf`                                                                                     |
 
-### Deobfuscation
+## Deobfuscation
 Approximately 60% of the obfuscated code has been successfully recovered. The command structure and operational behavior have now been clearly identified. Below is the confirmed command structure:
 
 | File                          | Command                   | Action                          |
