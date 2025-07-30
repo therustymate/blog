@@ -33,7 +33,7 @@ It has been confirmed that fields other than the email are being filtered.
 
 Currently, the account registration page uses an `<input type="email" ... >` field for the email. This is a very basic form of filtering, which can be easily bypassed by tampering with the input type on the client side. We will investigate whether the server has any additional filtering mechanisms for the email field.
 
-After changing the input field to `<input type="text" ... >`, we were able to successfully input other types of data. Currently, we have entered the value test into the email field.
+After changing the input field to `<input type="text" ... >`, we were able to successfully input other types of data. Currently, we have entered the value `test` into the email field.
 
 ## Administration Page
 ![adminpage](./adminpage.png)
@@ -47,7 +47,7 @@ Now, we will attempt to perform a Cross-Site Scripting (XSS) attack using the em
 
 We submitted the following JavaScript code in the email field. The expected behavior is that the browser will display a message box showing the number `1`:
 ```js
-script>alert(1);</script>
+<script>alert(1);</script>
 ```
 
 ![completed](./attack%20completed.png)
