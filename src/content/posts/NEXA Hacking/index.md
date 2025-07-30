@@ -1,5 +1,5 @@
 ---
-title: NEXA Business Website Hacking
+title: NEXA Website Hacking
 published: 2025-07-31
 description: Hacking My Own Project - NEXA Business Website
 tags: [penetration testing, XSS]
