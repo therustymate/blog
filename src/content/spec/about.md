@@ -11,7 +11,7 @@
   </ul>
 </div>
 
- **<h3 align="left">Post-Exploitation Specialist</h3>**
+ **<h3 align="left">Exploit Developer</h3>**
 
 **<h3 align="left">Rapid Fire</h3>**
 
