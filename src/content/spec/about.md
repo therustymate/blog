@@ -1,5 +1,4 @@
 # About
-![Header](./github-header-image.png)
 
 <div id="toc">
   <ul align="center" style="list-style: none">
