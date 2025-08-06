@@ -121,7 +121,7 @@ This is the full source code (decompiled):
 ```c title="/vuln.c"
 void segfault_handler()
 {
-    printf("Segfault Occurred, incorrect add…");
+    printf("Segfault Occurred, incorrect address.");
     exit(0);
 }
 
