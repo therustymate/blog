@@ -202,7 +202,7 @@ Your input: 560ada0132
 Segfault Occurred, incorrect address.
 ```
 
-Notice the `main()` function offset **33d** does not change.<br>
+Notice that the `main()` function offset **33d** does not change.<br>
 Therefore, the base address is `0xXXXXXXXX+func (3 bytes)`
 
 This suggests that the input should be: `0xXXXXXXXX2a7` in order to jump to the `win()` function.
