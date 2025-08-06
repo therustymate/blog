@@ -22,8 +22,8 @@ PicoCTF Challenge:
 > ### Hints
 > 1st - Can you figure out what changed between the address you found locally and in the server output?<br>
 > ### Resources:
-> Source Code: [https://challenge-files.picoctf.net/c_rescued_float/1d01af98df77f5ba0339c7e7ba2031e95c3bcce1397dc3b60617dfcfe2e4c7be/vuln.c](https://challenge-files.picoctf.net/c_rescued_float/1d01af98df77f5ba0339c7e7ba2031e95c3bcce1397dc3b60617dfcfe2e4c7be/vuln.c)<br>
-> Binary: [https://challenge-files.picoctf.net/c_rescued_float/1d01af98df77f5ba0339c7e7ba2031e95c3bcce1397dc3b60617dfcfe2e4c7be/vuln](https://challenge-files.picoctf.net/c_rescued_float/1d01af98df77f5ba0339c7e7ba2031e95c3bcce1397dc3b60617dfcfe2e4c7be/vuln)<br>
+> Source Code: [/vuln.c](https://challenge-files.picoctf.net/c_rescued_float/1d01af98df77f5ba0339c7e7ba2031e95c3bcce1397dc3b60617dfcfe2e4c7be/vuln.c)<br>
+> Binary: [/vuln](https://challenge-files.picoctf.net/c_rescued_float/1d01af98df77f5ba0339c7e7ba2031e95c3bcce1397dc3b60617dfcfe2e4c7be/vuln)<br>
 
 ```bash
 <!-- Server Information -->
