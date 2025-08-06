@@ -1,7 +1,7 @@
 ---
 title: PicoCTF - PIE TIME
 published: 2025-08-07
-description: QuasarRAT
+description: PicoCTF Writeup for PIE TIME Challenge
 tags: [binary exploitation, easy, picoCTF 2025]
 category: PicoCTF Writeup
 draft: false
@@ -9,8 +9,6 @@ lang: en
 ---
 
 # PicoCTF Writeup - PIE TIME
-
-Binary Ninja BNDB: [/public/bndb/202508071017.bndb](/public/bndb/202508071017.bndb)
 
 PicoCTF Challenge: 
 [https://play.picoctf.org/practice/challenge/490?category=6&page=1](https://play.picoctf.org/practice/challenge/490?category=6&page=1)
