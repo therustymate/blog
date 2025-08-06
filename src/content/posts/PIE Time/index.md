@@ -25,15 +25,14 @@ PicoCTF Challenge:
 > Source Code: [/vuln.c](https://challenge-files.picoctf.net/c_rescued_float/1d01af98df77f5ba0339c7e7ba2031e95c3bcce1397dc3b60617dfcfe2e4c7be/vuln.c)<br>
 > Binary: [/vuln](https://challenge-files.picoctf.net/c_rescued_float/1d01af98df77f5ba0339c7e7ba2031e95c3bcce1397dc3b60617dfcfe2e4c7be/vuln)<br>
 
-```bash
-<!-- Server Information -->
+```bash title="Server Information"
 $ nc rescued-float.picoctf.net 61719
 ```
 
 ## Analysis
 
 
-```c
+```c title="/vuln.c"
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
