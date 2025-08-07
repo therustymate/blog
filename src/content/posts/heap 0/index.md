@@ -273,6 +273,8 @@ int main()
 }
 ```
 
+## Analysis
+
 This program allocates two heap memory variables, `input_data` and safe_var, using `malloc()`, and allows the user to modify `input_data` through input.
 
 However, in this program, a heap overflow is possible through `scanf()` on the heap memory.

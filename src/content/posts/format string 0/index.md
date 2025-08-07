@@ -253,6 +253,8 @@ int main()
 }
 ```
 
+## Analysis
+
 A close inspection of the program’s decompiled code reveals that special characters with `%` are printed in `printf()`. By selecting an appropriate format string as input, you can have that format string printed and cause a segmentation fault.
 
 The string `Gr%114d_Cheese` prints a specific number of spaces on the screen, followed by additional strings. The code below calls `serve_bob()` if the number of characters printed by printf exceeds 64.
