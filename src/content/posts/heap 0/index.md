@@ -157,7 +157,7 @@ We can decompile the binary to a pseudo C like this (Binary Ninja):
 
 This is the full source code (decompiled):
 
-```c title="/vuln.c"
+```c title="/chall.c"
 int check_win()
 {
     if (!strcmp(safe_var, "bico"))
