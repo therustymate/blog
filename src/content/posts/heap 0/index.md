@@ -88,7 +88,14 @@ We can decompile the binary to a pseudo C like this (Binary Ninja):
 004014a7        
 004014d5        while (true)
 004014d5        {
-004014d5            printf("\n1. Print Heap:\t\t(print the c…");
+004014d5            printf("
+                        \n1. Print Heap:\t\t(print the current state of the heap)
+                        \n2. Write to buffer:\t(write to your own personal block of data on the heap)
+                        \n3. Print safe_var:\t(I'll even let you look at my variable on the heap, I'm confident it can't be modified)
+                        \n4. Print Flag:\t\t(Try to print the flag, good luck)
+                        \n5. Exit
+                        \n
+                        \nEnter your choice: ");
 004014de            fflush(stdout);
 
 004014de            
@@ -132,7 +139,7 @@ We can decompile the binary to a pseudo C like this (Binary Ninja):
 004015a1                    }
 004015d9                    case 2:
 004015d9                    {
-004015d9                        printf("\n\nTake a look at my variable: …", safe_var);
+004015d9                        printf("\n\nTake a look at my variable: safe_var = %s\n\n", safe_var);
 004015e2                        fflush(stdout);
 004015e7                        continue;
 004015d9                    }
@@ -245,7 +252,7 @@ int main()
                 }
                 case 3:
                 {
-                    printf("\n\nTake a look at my variable: …", safe_var);
+                    printf("\n\nTake a look at my variable: safe_var = %s\n\n", safe_var);
                     fflush(stdout);
                     continue;
                 }
