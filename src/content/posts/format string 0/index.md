@@ -15,8 +15,6 @@ BNDB (Binary Ninja Database): [/bndb/202508080956.bndb](/blog/bndb/202508080956.
 PicoCTF Challenge: 
 [https://play.picoctf.org/practice/challenge/433?category=6&page=1](https://play.picoctf.org/practice/challenge/433?category=6&page=1)
 
-# PicoCTF Writeup - format string 0
-
 > ## format string 0
 > Author: Cheng Zhang
 > 
@@ -265,6 +263,8 @@ if (printf(&format) > 0x40) /* 0x40 => 64 */
 ```
 
 The string `Cla%sic_Che%s%steak` calls `%s` a total of 3 times. In the `printf()` statement containing this string, `%s` is called 6 times in total to print the string. By attempting to call 3 additional non-existent strings, a **segmentation fault** is triggered.
+
+
 
 ```bash
 therustymate-picoctf@webshell:~$ nc mimas.picoctf.net 60589
