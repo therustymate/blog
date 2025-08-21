@@ -235,7 +235,7 @@ The printf function 4th line of the code prints user input without validation wh
 
 This suggests that we can use this vulnerability to call the function `sym.win` to obtain the flag. In order to call the function, we need to know the offset of the function. In `radare2`, it says that the function is located at `0x0000136a`.
 
-Therefore, the memory location of the function `sym.win` should end with the last 3 digits of the address: `36a` (0x00001 suggests the dynamic base address).
+Therefore, the memory location of the function `sym.win` should end with the last 3 digits of the address: `36a` (`0x00001` suggests the dynamic base address).
 
 ```bash
 sym.win 		    0x0000136a
