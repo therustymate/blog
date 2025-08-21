@@ -211,7 +211,7 @@ int call_functions()
     fgets(&buffer, 64, stdin);
     printf(&buffer);
     printf(" enter the address to jump to, ex => 0x12345: ");
-    int target_address;
+    unsigned long target_address; /* address type */
     scanf("%lx", &target_address);
     target_address();
 
