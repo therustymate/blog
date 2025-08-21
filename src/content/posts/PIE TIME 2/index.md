@@ -8,14 +8,12 @@ draft: false
 lang: en
 ---
 
-# PicoCTF Writeup - PIE TIME
-
-<!-- BNDB (Binary Ninja Database): [/bndb/202508071017.bndb](/blog/bndb/202508071017.bndb) -->
+# PicoCTF Writeup - PIE TIME 2
 
 PicoCTF Challenge: 
 [https://play.picoctf.org/practice/challenge/491?category=6&page=1](https://play.picoctf.org/practice/challenge/491?category=6&page=1)
 
-> ## PIE TIME
+> ## PIE TIME 2
 > Author: Darkraicg492
 > 
 > ### Description
@@ -27,10 +25,6 @@ PicoCTF Challenge:
 > ### Resources:
 > Source Code: [/vuln.c](https://challenge-files.picoctf.net/c_rescued_float/0ee50c4c94b334e2007d91218ac385470257261765b09a6620226865a05bf468/vuln.c)<br>
 > Binary: [/vuln](https://challenge-files.picoctf.net/c_rescued_float/0ee50c4c94b334e2007d91218ac385470257261765b09a6620226865a05bf468/vuln)<br>
-
-```bash title="Server Information"
-$ nc rescued-float.picoctf.net 49743
-```
 
 This blog is in Korean
 
